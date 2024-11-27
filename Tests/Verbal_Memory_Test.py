@@ -4,7 +4,7 @@ from Utilities.Initialize_Test import *
 import pytest
 
 
-def execute_aim(page):
+def execute_verbal_memory(page):
     dashboard_page = DashboardPage(page=page)
     verbal_memory_page = VerbalMemoryPage(page=page)
 
@@ -17,9 +17,9 @@ def execute_aim(page):
     return results
 
 
-test_result = initialize_test(test=execute_aim)
+test_result = initialize_test(test=execute_verbal_memory)
 
 
 @pytest.mark.parametrize("result", test_result)
-def test_aim(result):
+def test_verbal_memory(result):
     assert type(result) == str
