@@ -20,5 +20,5 @@ test_result = initialize_test(test=execute_typing)
 
 
 @pytest.mark.parametrize("result", test_result)
-def test_typing_results(result):
+def test_typing_speed(result):
     assert type(result) == str
