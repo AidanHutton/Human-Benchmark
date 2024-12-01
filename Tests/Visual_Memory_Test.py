@@ -15,12 +15,12 @@ def execute_visual_memory(page):
     while lives_remaining > 0:
         squares = visual_memory_page.detect_active_squares()
         if len(squares) > 100:
-            visual_memory_page.break_out_of_test()
+            visual_memory_page.break_out_of_test(squares=squares)
             lives_remaining -= 1
-        visual_memory_page.click_active_squares(squares=squares)
+        else:
+            visual_memory_page.click_active_squares(squares=squares)
 
     results = visual_memory_page.get_test_results()
-
     return results
 
 
